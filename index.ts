@@ -8,5 +8,11 @@ addEventListener("fetch", (event: any) => {
       headers: { "content-type": "text/plain" },
     });
     event.respondWith(response);
+  } else {
+    event.respondWith(
+      new Response(null, {
+        status: 500,
+      })
+    );
   }
 });
