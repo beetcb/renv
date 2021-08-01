@@ -10,8 +10,5 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.4.10"
-  },
-  "dependencies": {
-    "@cloudflare/workers-types": "^2.2.2"
   }
 }
