@@ -7,11 +7,11 @@ addEventListener("fetch", (event: FetchEvent) => {
 
   const url = new URL(event.request.url);
   const pass = url.searchParams.get("pass");
-  const { pathname } = url;
+  const envName= url.pathname.replace(/$\//, '');
 
   const dotEnv = Object.fromEntries(
-    Object.keys(envObject).filter((k) => pathname.startsWith(`/${k}`)).map(
-      (k) => [k, envObject[k]],
+    Object.keys(envObject).filter((k) => k.startsWith(envName)).map(
+      (k) => [k.replace(new RegExp(`^${envName}_`), ''), envObject[k]],
     ),
   );
 
