@@ -4,7 +4,7 @@ addEventListener("fetch", (event: FetchEvent) => {
   const envObject = Deno.env.toObject();
   const { ENV_PASS } = envObject;
 
-  const url = new URL(event.request.url);
+  const url = new URL(decodeURI(event.request.url));
   const pass = url.searchParams.get("pass");
   const envName = url.pathname.replace(/^\//, "");
 
