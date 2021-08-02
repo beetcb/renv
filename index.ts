@@ -14,7 +14,7 @@ addEventListener("fetch", (event: FetchEvent) => {
       .map((k) => [
         k.replace(new RegExp(`^${envName}_`, "i"), ""),
         envObject[k],
-      ])
+      ]),
   );
 
   if (pass === ENV_PASS) {
@@ -24,14 +24,14 @@ addEventListener("fetch", (event: FetchEvent) => {
         .join(EOL.CRLF),
       {
         headers: { "content-type": "text/plain" },
-      }
+      },
     );
     event.respondWith(response);
   } else {
     event.respondWith(
       new Response("PASS Auth Failed", {
         status: 500,
-      })
+      }),
     );
   }
 });
