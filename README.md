@@ -1,6 +1,6 @@
 # RENV
 
-A remote dotenv getter built with [deno deploy](https://deno.com/deploy)
+A remote dotenv service built with [deno deploy](https://deno.com/deploy)
 
 # Deploy
 
