@@ -9,13 +9,15 @@ addEventListener("fetch", (event: FetchEvent) => {
   const envName = url.pathname.replace(/$\//, "");
 
   const dotEnv = Object.fromEntries(
-    Object.keys(envObject).filter((k) => k.startsWith(envName)).map(
+    Object.keys(envObject).filter((k) =>
+      k.match(new RegExp(`^${envName}`, "i"))
+    ).map(
       (k) => [k.replace(new RegExp(`^${envName}_`, "i"), ""), envObject[k]],
     ),
   );
 
   console.log({
-    url,
+    envObject,
     pass,
     envName,
     dotEnv,
