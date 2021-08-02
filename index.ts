@@ -6,14 +6,15 @@ addEventListener("fetch", (event: FetchEvent) => {
 
   const url = new URL(event.request.url);
   const pass = url.searchParams.get("pass");
-  const envName = url.pathname.replace(/$\//, "");
+  const envName = url.pathname.replace(/^\//, "");
 
   const dotEnv = Object.fromEntries(
-    Object.keys(envObject).filter((k) =>
-      k.match(new RegExp(`^${envName}`, "i"))
-    ).map(
-      (k) => [k.replace(new RegExp(`^${envName}_`, "i"), ""), envObject[k]],
-    ),
+    Object.keys(envObject)
+      .filter((k) => k.match(new RegExp(`^${envName}`, "i")))
+      .map((k) => [
+        k.replace(new RegExp(`^${envName}_`, "i"), ""),
+        envObject[k],
+      ])
   );
 
   console.log({
@@ -31,14 +32,14 @@ addEventListener("fetch", (event: FetchEvent) => {
         .join(EOL.CRLF),
       {
         headers: { "content-type": "text/plain" },
-      },
+      }
     );
     event.respondWith(response);
   } else {
     event.respondWith(
       new Response("PASS Auth Failed", {
         status: 500,
-      }),
+      })
     );
   }
 });
