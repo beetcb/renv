@@ -26,3 +26,23 @@ Deploy by URL: `https://github.com/beetcb/renv/blob/main/index.ts`
    Send a GET request to
    `https://deployname.deno.dev/{envnamespace}?pass={ENV_PASS}`, `renv` will
    return a text/plain response with a standard `.env` file format string
+
+# Example 
+
+My Environment Variables settings on `deno deploy`:
+
+![deno deploy](https://i.imgur.com/C0mUfZe.png)
+
+How to get `oabot` dotenv? 
+
+```bash
+GET https://renv.deno.dev/oabot?pass=a-normal-password
+```
+
+Response: 
+```bash
+UNIDOC_LICENSE_API_KEY=RANDOMSTRING
+SIGN=RANDOMSTRING
+APP_KEY=RANDOMSTRING
+WORKSHEET_ID=RANDOMSTRING
+```
