@@ -3,4 +3,7 @@ type FetchEvent = {
   respondWith: (response: Response) => void;
 };
 
-declare function addEventListener(type: 'fetch', handler: (event: FetchEvent) => void): void;
+declare function addEventListener(
+  type: "fetch",
+  handler: (event: FetchEvent) => void,
+): void;
