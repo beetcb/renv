@@ -13,7 +13,7 @@ Deploy by URL: `https://github.com/beetcb/renv/blob/main/index.ts`
    Project -> Settings -> Environment Variables, add `ENV_PASS` env
 2. Set environment variables
 
-   The key of your environment variable must use a solid syntax like this:
+   Set the environment variables as in step 1, The key of your environment variable must use a solid syntax like this:
    `ENVNAMESPACE_ENVNAME`
 
    - ENVNAMESPACE: By defining `ENVNAMESPACE`, `renv` can create multiple environments
