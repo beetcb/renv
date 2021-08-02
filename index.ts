@@ -17,14 +17,6 @@ addEventListener("fetch", (event: FetchEvent) => {
       ])
   );
 
-  console.log({
-    envObject,
-    pass,
-    envName,
-    dotEnv,
-    ENV_PASS,
-  });
-
   if (pass === ENV_PASS) {
     const response = new Response(
       Object.entries(dotEnv)
