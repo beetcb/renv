@@ -14,10 +14,10 @@ Deploy by url: `https://github.com/beetcb/renv/blob/main/index.ts`
 2. Set environment variables
 
    The key of your environment variable must use a solid syntax like this:
-   `ENVNAMESPACE_ENVNAME}`
+   `ENVNAMESPACE_ENVNAME`
 
-   - ENVNAMESPACE: By defining ENVNAMESPACE, we can create multiple environments
-     depending on the needs
+   - ENVNAMESPACE: By defining `ENVNAMESPACE`, `renv` can create multiple environments
+     depending on the needs, just like multiple dotenv files stored in the cloud
 
    - ENVNAME: The name of the environment variable
 
