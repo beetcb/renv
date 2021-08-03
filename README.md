@@ -4,7 +4,7 @@ A remote dotenv service built with [deno deploy](https://deno.com/deploy)
 
 # Deploy
 
-Deploy by URL: `https://github.com/beetcb/renv/blob/main/index.ts`
+Deploy by URL: `https://github.com/beetcb/renv/raw/main/index.ts`
 
 # Usage
 
